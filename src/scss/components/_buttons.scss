@@ -1,0 +1,23 @@
+.button {
+  &--primary {
+    position: relative;
+
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 110%;
+
+    border: none;
+    border-radius: 50px;
+    background: linear-gradient(135deg, #fdeb71 0%, #f8d800 100%);
+
+    padding: 30px 60px;
+    cursor: pointer;
+
+    transition: background 0.2s ease-out;
+
+    &:hover {
+      background: linear-gradient(135deg, #ffe952 0%, #e2c500 100%);
+      // background: #f8d800;
+    }
+  }
+}
