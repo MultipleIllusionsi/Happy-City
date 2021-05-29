@@ -3,17 +3,23 @@ import "./scss/main.scss";
 import "./intersection";
 import { SmoothScroll } from "./smoothScroll";
 
-const HeroImage = document.getElementById("hero-image");
+window.addEventListener("load", () => {
+  const HeroImage = document.getElementById("hero-image");
+  const isLoaded = HeroImage.complete && HeroImage.naturalHeight !== 0;
 
-if (HeroImage.complete) {
-  const smoothScroll = new SmoothScroll({
-    container: document.getElementById("container"),
-    inertia: 0.05,
-    threshold: 1,
-    useRaf: true,
-  });
+  console.log("isLoaded", isLoaded);
 
-  window.addEventListener("resize", () => {
-    smoothScroll.resize();
-  });
-}
+  if (isLoaded) {
+    console.log("completed");
+    const smoothScroll = new SmoothScroll({
+      container: document.getElementById("container"),
+      inertia: 0.05,
+      threshold: 1,
+      useRaf: true,
+    });
+
+    window.addEventListener("resize", () => {
+      smoothScroll.resize();
+    });
+  }
+});
